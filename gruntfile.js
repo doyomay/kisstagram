@@ -1,5 +1,5 @@
 module.exports = function (grunt) {
-	
+
 	grunt.initConfig({
 		//Opciones CSS
 		stylus: {
@@ -58,6 +58,11 @@ module.exports = function (grunt) {
 		},
 
 		//Utilidades
+		supervisor: {
+			target: {
+				script: 'main.js'
+			}
+		},
 		browserSync: {
 			dev: {
 				bsFiles: {
@@ -86,6 +91,10 @@ module.exports = function (grunt) {
 			js: {
 				files: 'ng/**/*',
 				tasks: 'concat'
+			},
+			app: {
+				files: ['controllers/**/*', 'main.js'],
+				task: 'supervisor'
 			}
 		}
 	});
@@ -99,7 +108,7 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('stylus-compile', ['stylus:compile', 'autoprefixer:core']);
 	//Para comenzar a trabajar
-	grunt.registerTask('default', ['notify_hooks', 'stylus-compile', 'js-compile', 'browserSync', 'watch']);
+	grunt.registerTask('default', ['notify_hooks', 'stylus-compile', 'js-compile', 'browserSync','supervisor', 'watch']);
 
 	//Proesos para crear los archivos min
 	grunt.registerTask('dist', ['stylus-compile', 'cssmin:minifyCore', 'js-compile', 'uglify']);
