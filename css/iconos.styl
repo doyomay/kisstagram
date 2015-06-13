@@ -1,0 +1,40 @@
+.Icon
+	display inline-block
+	padding 35px
+
+.Icon-menu
+	content ' '
+	display inline-block
+	background #fff
+	border-radius 3px
+	height 8px
+	position relative
+	width 3em
+	z-index 1
+	transition: all 500ms cubic-bezier(0.615, 0.25, 0.505, 1.47);
+	&:after,&:before
+		content ' '
+		display inline-block
+		background #fff
+		border-radius 3px
+		height 8px
+		width 3em
+		position absolute
+		transition: all 500ms cubic-bezier(0.615, 0.25, 0.505, 1.47);
+	&:after
+		top 12px
+	&:before
+		bottom 12px
+	&:focus
+		background-color transparent
+		&:before
+			transform: rotate(45deg) scale(1.2);
+			bottom 0
+		&:after
+			transform: rotate(-45deg) scale(1.2);
+			top 0
+		+.Menu
+			&-left
+				transition opacity 0.2s, transform 0.2s 0.2s
+				transform perspective(1000px) rotateX(0deg)
+				opacity 1

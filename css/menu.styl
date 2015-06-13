@@ -1,6 +1,40 @@
 .Menu
-	background Principal
-	height 4em
 	position fixed
 	width 100%
 	z-index 99
+	&-header
+		background Principal
+		height 5em
+	&-link
+		color #fff
+		display block
+		font-size 1.3em
+		height 5em
+		line-height 5em
+		text-decoration none
+		text-align center
+		transition .2s background ease-in-out
+		width 5em
+		&:hover,
+		&:focus
+			background-color #47a3da
+			text-shadow 0 1px 1px rgba(57, 132, 177, 0.75)
+	&-left
+		height 100%
+		top 0
+		left 0
+		margin 0
+		background Principal
+		list-style none
+		padding-top 5em
+		padding-left 0
+		position fixed
+		opacity 0
+		-webkit-backface-visibility hidden
+		backface-visibility hidden
+		transition opacity 0.2s 0.2s, transform 0.2s 0.2s
+		transform-origin 50% top
+		transform perspective(1000px) rotateX(-91deg)
+	&-logout
+		position absolute
+		bottom 5em
