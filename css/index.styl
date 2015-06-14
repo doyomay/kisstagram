@@ -82,7 +82,16 @@
 		border-bottom 1px solid Post_borde
 		outline transparent
 		height 2em
+		placeholder Post_timestamp
+		color darken(Post_timestamp, 30)
 		width 100%
+		position relative
+		&:after
+			display block
+			position absolute
+			content '>'
+			top 50%
+			left 0
 	&-usercomment
 		display inline-block
 		margin-right 1em
