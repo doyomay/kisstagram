@@ -11,5 +11,9 @@ angular.module('app')
 			.when('/', {
 				controller: 'TimelineCtrl',
 				templateUrl: 'timeline.html'
+			})
+			.when('/upload', {
+				controller: 'UploadCtrl',
+				templateUrl : 'upload.html'
 			});
 	});

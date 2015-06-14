@@ -1,38 +1,35 @@
-<main class="Main">
-	<section class="Posts">
-		<article data-ng-repeat="post in posts" class="Post">
-			<div class="Post-description">
-				<div class="u-center_wrapper">
-					<header class="Post-encabezado">
-						<figure class="Post-usuario">
-							<img class="Post-perfil" data-ng-src="/{{post.usuario.avatar}}" alt="{{post.usuario.nombre}}"
-									 title="{{post.usuario.nombre}}"/>
-							<a class="Post-usuario_link" href="/user/{{post.usuario.nombre}}">@{{post.usuario.nombre}}</a>
-						</figure>
-						<span class="Post-timestamp">hace 4 min</span>
-					</header>
-					<p class="Post-text">
-						{{post.texto}}
-					</p>
-					<ul class="Post-comments">
-						<li data-ng-repeat="comentario in post.comments" class="Post-comment">
-							<a class="Post-usercomment" href="/user/{{comentario.usuario}}">@{{comentario.usuario}}</a>
-							{{comentario.comment}}
-						</li>
-					</ul>
-				</div>
-			</div>
+<section class="Posts">
+	<article data-ng-repeat="post in posts" class="Post">
+		<div class="Post-description">
 			<div class="u-center_wrapper">
-				<form class="Post-comentario-form" action="/">
-					<input class="Post-comentario-input" type="text" placeholder="di algo ..."/>
-				</form>
+				<header class="Post-encabezado">
+					<figure class="Post-usuario">
+						<img class="Post-perfil" data-ng-src="/{{post.usuario.avatar}}" alt="{{post.usuario.nombre}}"
+								 title="{{post.usuario.nombre}}"/>
+						<a class="Post-usuario_link" href="/user/{{post.usuario.nombre}}">@{{post.usuario.nombre}}</a>
+					</figure>
+					<span class="Post-timestamp">hace 4 min</span>
+				</header>
+				<p class="Post-text">
+					{{post.texto}}
+				</p>
+				<ul class="Post-comments">
+					<li data-ng-repeat="comentario in post.comments" class="Post-comment">
+						<a class="Post-usercomment" href="/user/{{comentario.usuario}}">@{{comentario.usuario}}</a>
+						{{comentario.comment}}
+					</li>
+				</ul>
 			</div>
-			<figure class="Post-imagen">
-				<img class="Post-img"
-						 data-ng-src="{{post.imagen}}"
-						 alt="{{post.texto}}" title="{{post.texto}}"/>
-			</figure>
-		</article>
-
-	</section>
-</main>
+		</div>
+		<div class="u-center_wrapper">
+			<form class="Post-comentario-form" action="/">
+				<input class="Post-comentario-input" type="text" placeholder="di algo ..."/>
+			</form>
+		</div>
+		<figure class="Post-imagen Animation-left">
+			<img class="Post-img"
+					 data-ng-src="{{post.imagen}}"
+					 alt="{{post.texto}}" title="{{post.texto}}"/>
+		</figure>
+	</article>
+</section>
