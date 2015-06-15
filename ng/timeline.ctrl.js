@@ -3,7 +3,14 @@
  */
 angular.module('app')
 	.controller('TimelineCtrl', function ($scope) {
-		var posts = [{
+		var Post = new Posts();
+		angular.element(document).ready(function(){
+			Post.addDetectionTop();
+		});
+		angular.element(document).bind('scroll',function(){
+			Post.addDetectionTop();
+		});
+		var postsContainer = [{
 			usuario: {
 				nombre: 'doyomay',
 				avatar: 'profile.gif'
@@ -14,7 +21,7 @@ angular.module('app')
 				usuario: 'Gerardo',
 				comment: 'Este es un commentario de prueba'
 			}]
-		},{
+		}, {
 			usuario: {
 				nombre: 'doyomay',
 				avatar: 'profile.gif'
@@ -25,7 +32,7 @@ angular.module('app')
 				usuario: 'Gerardo',
 				comment: 'Este es un commentario de prueba'
 			}]
-		},{
+		}, {
 			usuario: {
 				nombre: 'doyomay',
 				avatar: 'profile.gif'
@@ -36,7 +43,7 @@ angular.module('app')
 				usuario: 'Gerardo',
 				comment: 'Este es un commentario de prueba'
 			}]
-		},{
+		}, {
 			usuario: {
 				nombre: 'doyomay',
 				avatar: 'profile.gif'
@@ -48,5 +55,5 @@ angular.module('app')
 				comment: 'Este es un commentario de prueba'
 			}]
 		}];
-		$scope.posts = posts;
+		$scope.posts = postsContainer;
 	});

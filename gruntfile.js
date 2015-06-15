@@ -42,7 +42,7 @@ module.exports = function (grunt) {
 				sourceMap: true
 			},
 			core: {
-				src: ['ng/module.js','ng/**/*'],
+				src: ['ng/lib/**/*.js', 'ng/module.js', 'ng/**/*'],
 				dest: 'assets/main.js'
 			}
 		},
@@ -66,7 +66,7 @@ module.exports = function (grunt) {
 		browserSync: {
 			dev: {
 				bsFiles: {
-					src: ['assets/*.css', 'templates/*.html','layouts/*.html' ,'assets/*.js']
+					src: ['assets/*.css', 'templates/*.html', 'layouts/*.html', 'assets/*.js']
 				},
 				options: {
 					watchTask: true

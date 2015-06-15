@@ -24,11 +24,3 @@ var Posts = function () {
 		}
 	};
 };
-function init() {
-	var Post = new Posts();
-	Post.addDetectionTop();
-	window.onscroll = function () {
-		Post.addDetectionTop();
-	};
-}
-window.onload = init();
